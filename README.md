@@ -1,6 +1,6 @@
 # Legal pages
 
-The two public pages Google Play requires before Wanas can be submitted.
+The two public pages Google Play requires before Dafa can be submitted.
 
 | File | Where it goes in the Play Console |
 |---|---|
@@ -65,7 +65,7 @@ public repo instead; nothing here is secret.
 cd legal
 git init -b main
 git add .
-git commit -m "Wanas privacy policy and account deletion pages"
+git commit -m "Dafa privacy policy and account deletion pages"
 gh repo create wanas-legal --public --source=. --push
 gh api -X POST repos/OMarey1/wanas-legal/pages -f 'source[branch]=main' -f 'source[path]=/'
 ```
@@ -80,7 +80,7 @@ from the `legal/` folder.
 
 ### A custom domain, later
 
-If you point `wanas.app` (or similar) at it, add a `CNAME` file containing the
+If you point `dafa.app` (or similar) at it, add a `CNAME` file containing the
 domain and set the DNS records GitHub shows under Settings → Pages. Play accepts
 the `github.io` URL, so this is cosmetic.
 
@@ -93,6 +93,11 @@ the `github.io` URL, so this is cosmetic.
 
 ## Assets
 
-`wanas-logo.png` is a copy of `assets/images/wanas-logo.png`. If the brand mark
-changes in the app, copy it across again — these pages are served from a
+`dafa-wordmark.png` is generated with the app's own marks by
+`node scripts/generate-brand-assets.mjs` (from `docs/brand/`). If the brand mark
+changes, regenerate and copy it across again — these pages are served from a
 separate public repo and cannot reference the app repo.
+
+The pages repo is still named `wanas-legal`, so its URLs above keep the old
+name until the owner renames the repo (§200). A rename moves the URL, so the
+store listings' privacy-policy and deletion links must change with it.
