@@ -32,7 +32,7 @@ confirmation-first safety process, the three deletion blockers from migration
 and the deliberate absence of automated scoring. If that behaviour changes,
 these pages change with it.
 
-Filled-in values: controller **Omar Marey**, contact **wanas@getkensho.ai**,
+Filled-in values: controller **Omar Marey**, contact **dafa@getkensho.ai**,
 payment provider **Geidea**, hosting region **Frankfurt (eu-central-1)**,
 dated **24 September 2026**.
 
