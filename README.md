@@ -66,14 +66,14 @@ cd legal
 git init -b main
 git add .
 git commit -m "Dafa privacy policy and account deletion pages"
-gh repo create wanas-legal --public --source=. --push
-gh api -X POST repos/OMarey1/wanas-legal/pages -f 'source[branch]=main' -f 'source[path]=/'
+gh repo create dafa-legal --public --source=. --push
+gh api -X POST repos/OMarey1/dafa-legal/pages -f 'source[branch]=main' -f 'source[path]=/'
 ```
 
 Live a minute or two later at:
 
-- `https://omarey1.github.io/wanas-legal/privacy-policy.html`
-- `https://omarey1.github.io/wanas-legal/delete-account.html`
+- `https://omarey1.github.io/dafa-legal/privacy-policy.html`
+- `https://omarey1.github.io/dafa-legal/delete-account.html`
 
 To update afterwards: edit the files here, then `git add -A && git commit && git push`
 from the `legal/` folder.
@@ -98,6 +98,8 @@ the `github.io` URL, so this is cosmetic.
 changes, regenerate and copy it across again — these pages are served from a
 separate public repo and cannot reference the app repo.
 
-The pages repo is still named `wanas-legal`, so its URLs above keep the old
-name until the owner renames the repo (§200). A rename moves the URL, so the
-store listings' privacy-policy and deletion links must change with it.
+The pages repo was renamed `dafa-legal` on 2026-10-24 (§202). GitHub Pages does not
+redirect after a rename, so the old `wanas-legal` URLs are dead. Since then the
+pages are published from this folder with
+`git subtree split --prefix=legal main` pushed to the `legal` remote's `main`,
+which is a fast-forward.
