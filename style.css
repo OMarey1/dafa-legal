@@ -403,3 +403,11 @@ footer {
   .card, .callout { box-shadow: none; border: 1px solid var(--line); }
   .lang { display: block !important; }
 }
+
+/* Terms draft: a passage still waiting for the owner's or a lawyer's wording. */
+.todo {
+  background: var(--coral-soft);
+  border-inline-start: 4px solid var(--coral-deep);
+  border-radius: 8px;
+  padding: var(--sp-md) var(--sp-lg);
+}
