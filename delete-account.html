@@ -75,7 +75,7 @@
     <tr>
       <td>An open safety case</td>
       <td>A safety concern has been raised and must reach a proper resolution. This is the one that matters most.</td>
-      <td>Work through it with your therapist or our safety team.</td>
+      <td>Work through it with your specialist or our safety team.</td>
     </tr>
     <tr>
       <td>An open complaint</td>
@@ -107,7 +107,7 @@
   <thead><tr><th>What</th><th>Why</th><th>How long</th></tr></thead>
   <tbody>
     <tr><td>Payment and invoice records</td><td>Tax and accounting law</td><td>5 years</td></tr>
-    <tr><td>Clinical records, including your therapist's session notes</td><td>Professional and legal obligations on the therapist</td><td>5 years from your last session</td></tr>
+    <tr><td>Clinical records, including your specialist's session notes</td><td>Professional and legal obligations on the specialist</td><td>5 years from your last session</td></tr>
     <tr><td>Records of a concluded safety case</td><td>Duty of care and legal obligation</td><td>5 years from resolution</td></tr>
     <tr><td>Security audit logs</td><td>To show who did what on the system. These identify you only by an anonymous ID, and carry no message, journal or assessment content.</td><td>2 years</td></tr>
   </tbody>
@@ -119,7 +119,7 @@
 <p>You do not have to delete everything to get privacy back. Inside the app you can, at any time and instantly:</p>
 <div class="card">
   <ul>
-    <li>Withdraw a therapist's access to your identity, your sensitive profile, your journal or your assessments — separately, and per therapist. Withdrawal applies to past material as well as new material.</li>
+    <li>Withdraw a specialist's access to your identity, your sensitive profile, your journal or your assessments — separately, and per specialist. Withdrawal applies to past material as well as new material.</li>
     <li>Delete an individual message within the deletion window.</li>
     <li>Switch on anonymous mode so your real name is not shown.</li>
   </ul>
@@ -184,7 +184,7 @@
     <tr>
       <td>حالة سلامة مفتوحة</td>
       <td>أُثيرت مسألة تتعلق بالسلامة ويجب أن تصل إلى خاتمة سليمة. وهذا هو الأهم بينها.</td>
-      <td>استكملها مع معالجك أو مع فريق السلامة لدينا.</td>
+      <td>استكملها مع متخصصك أو مع فريق السلامة لدينا.</td>
     </tr>
     <tr>
       <td>شكوى مفتوحة</td>
@@ -216,7 +216,7 @@
   <thead><tr><th>ما هو</th><th>السبب</th><th>المدة</th></tr></thead>
   <tbody>
     <tr><td>سجلات الدفع والفواتير</td><td>القانون الضريبي والمحاسبي</td><td>٥ سنوات</td></tr>
-    <tr><td>السجلات الإكلينيكية، ومنها ملاحظات جلسات معالجك</td><td>التزامات مهنية وقانونية على المعالج</td><td>٥ سنوات من آخر جلسة</td></tr>
+    <tr><td>السجلات الإكلينيكية، ومنها ملاحظات جلسات متخصصك</td><td>التزامات مهنية وقانونية على المتخصص</td><td>٥ سنوات من آخر جلسة</td></tr>
     <tr><td>سجلات حالة سلامة منتهية</td><td>واجب الرعاية والتزام قانوني</td><td>٥ سنوات من إغلاقها</td></tr>
     <tr><td>سجلات التدقيق الأمنية</td><td>لبيان من فعل ماذا في النظام. وهي لا تعرّفك إلا بمعرّف مجهول، ولا تحتوي على نص رسائل أو يوميات أو تقييمات.</td><td>سنتان</td></tr>
   </tbody>
@@ -228,7 +228,7 @@
 <p>لست مضطرًا لحذف كل شيء لتستعيد خصوصيتك. فداخل التطبيق يمكنك، في أي وقت وفورًا:</p>
 <div class="card">
   <ul>
-    <li>سحب وصول معالج إلى هويتك أو ملفك الحساس أو يومياتك أو تقييماتك — كلٌّ على حدة، ولكل معالج بمفرده. والسحب يسري على ما مضى كما على الجديد.</li>
+    <li>سحب وصول متخصص إلى هويتك أو ملفك الحساس أو يومياتك أو تقييماتك — كلٌّ على حدة، ولكل متخصص بمفرده. والسحب يسري على ما مضى كما على الجديد.</li>
     <li>حذف رسالة بعينها خلال مهلة الحذف.</li>
     <li>تفعيل الوضع المجهول فلا يظهر اسمك الحقيقي.</li>
   </ul>
@@ -240,7 +240,7 @@
 </div>
 
 <footer>
-  <p>Dafa &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy policy — سياسة الخصوصية</a></p>
+  <p>Dafa &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy policy — سياسة الخصوصية</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Use — شروط الاستخدام</a></p>
 </footer>
 
 </div>
@@ -257,8 +257,11 @@ function setLang(code) {
   try { localStorage.setItem('dafa-legal-lang', code); } catch (e) { /* private mode */ }
 }
 try {
+  // §221: the app opens a page with #ar or #en, its reader's language.
+  var asked = location.hash.slice(1);
   var saved = localStorage.getItem('dafa-legal-lang');
-  if (saved === 'ar' || saved === 'en') setLang(saved);
+  if (asked === 'ar' || asked === 'en') setLang(asked);
+  else if (saved === 'ar' || saved === 'en') setLang(saved);
   else if ((navigator.language || '').slice(0, 2) === 'ar') setLang('ar');
 } catch (e) { /* private mode */ }
 </script>
